@@ -13,8 +13,8 @@ export const BRAND_REDUCER_TOKEN = new InjectionToken<
   declarations: [],
   imports: [
     CommonModule,
-    StoreModule.forFeature('brandsModule', BRAND_REDUCER_TOKEN),
-    EffectsModule.forFeature([])
+    // StoreModule.forFeature('brandsModule', BRAND_REDUCER_TOKEN),
+    // EffectsModule.forFeature([])
   ],
   providers: [
     { provide: BRAND_REDUCER_TOKEN, useValue: BrandRootReducer },
