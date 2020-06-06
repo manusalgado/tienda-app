@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "name": "test",
+      "size": "S",
+      "description": "test",
+      "brand": "test",
+      "stock": 45,
+      "date": "2020-06-11",
+      "id": "3d5a2ce0-a79f-11ea-aa28-b99fac69f59c"
+    },
+    {
+      "name": "test",
+      "size": "M",
+      "description": "test",
+      "brand": "test",
+      "stock": 55,
+      "date": "2020-06-03",
+      "id": "91ce3370-a79f-11ea-97ed-1f131fd6ea70"
+    },
+    {
+      "name": "test",
+      "size": "M",
+      "description": "test",
+      "brand": "test",
+      "stock": 34,
+      "date": "2020-06-15",
+      "id": "e7524a70-a79f-11ea-b888-dd48982d0621"
+    },
+    {
+      "name": "test",
+      "size": "L",
+      "description": "test",
+      "brand": "test",
+      "stock": 34,
+      "date": "2020-06-04",
+      "id": "012131a0-a7a0-11ea-8866-875383d6a7f9"
+    }
+  ]
+}

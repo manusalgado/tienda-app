@@ -10,6 +10,10 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { RouterModule } from '@angular/router';
 import { ProductComponent } from './components/product/product.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductFacade } from './products.facade';
+import { ProductsEffects } from './store/effects/products.effects';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductsService } from './products.service';
 
 export const PRODUCT_REDUCER_TOKEN = new InjectionToken<
   ActionReducerMap<ProductState>
@@ -20,13 +24,16 @@ export const PRODUCT_REDUCER_TOKEN = new InjectionToken<
   imports: [
     CommonModule,
     StoreModule.forFeature('productsModule', PRODUCT_REDUCER_TOKEN),
-    EffectsModule.forFeature([]),
+    EffectsModule.forFeature([ProductsEffects]),
     ProductsRoutingModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: PRODUCT_REDUCER_TOKEN, useValue: ProductRootReducer },
+    ProductFacade,
+    ProductsService
   ]
 })
 export class ProductsModule { }
