@@ -3,4 +3,6 @@
     <span class="h3">Crear producto</span>
   </a>
 </section>
-<app-products-table></app-products-table>
+<app-products-table
+  [products]="products$ | async">
+</app-products-table>

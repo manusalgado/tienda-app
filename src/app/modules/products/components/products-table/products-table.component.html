@@ -1,23 +1,23 @@
 <section class="container">
-  <table class="table">
+  <table class="table" *ngIf="products">
     <thead>
       <tr>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Cantidades</th>
+        <th scope="col">Description</th>
+        <th scope="col">Talla</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Mark</td>
-        <td>Otto</td>
-      </tr>
-      <tr>
-        <td>Jacob</td>
-        <td>Thornton</td>
-      </tr>
-      <tr>
-        <td>Larry</td>
-        <td>the Bird</td>
+      <tr *ngFor="let product of products">
+        <td>{{product.name}}</td>
+        <td>{{product.brand}}</td>
+        <td>{{product.date}}</td>
+        <td>{{product.stock}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.size}}</td>
       </tr>
     </tbody>
   </table>
