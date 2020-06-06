@@ -35,6 +35,24 @@
       "stock": 34,
       "date": "2020-06-04",
       "id": "012131a0-a7a0-11ea-8866-875383d6a7f9"
+    },
+    {
+      "name": "test",
+      "size": "M",
+      "description": "test",
+      "brand": "test",
+      "stock": 444,
+      "date": "2020-06-08",
+      "id": "596a1880-a7a1-11ea-8b50-ef5b41fc38af"
+    },
+    {
+      "name": "test",
+      "size": "S",
+      "description": "test",
+      "brand": "test",
+      "stock": 333,
+      "date": "2020-06-15",
+      "id": "a7c5c1f0-a7a1-11ea-8dca-f1c4482710b3"
     }
   ]
 }
