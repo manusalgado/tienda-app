@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { SIZES } from '../../constants/products';
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { Product } from '../../entities/products';
+import { ProductFacade } from '../../products.facade';
+import { v1 as uuidv1 } from 'uuid';
+import {Location} from '@angular/common'
 
 @Component({
   selector: 'app-product',
@@ -13,7 +17,7 @@ export class ProductComponent implements OnInit {
   public form: FormGroup;
   public submitted: boolean = false;
 
-  constructor() { }
+  constructor(private facade: ProductFacade, private location: Location) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -37,10 +41,17 @@ export class ProductComponent implements OnInit {
   public onSubmit(): void {
     this.submitted = true;
     if (this.form.valid) {
+      const {name, size, brand, description, stock, date} = this.form.value;
+      const payload: Product = {name, size, description, brand, stock, date, id: uuidv1()};
+      this.createProduct(payload);
+      this.form.reset();
+      this.location.back()
 
     }
-    console.log(this.form.value);
-    
+  }
+
+  public createProduct(payload: Product): void {
+    this.facade.createProduct(payload)
   }
 
 }
