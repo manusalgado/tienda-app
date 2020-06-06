@@ -13,4 +13,8 @@ export class ProductsService {
   public create(payload: Product): Observable<Product> {
     return this.http.post<Product>('http://localhost:3000/products', payload)
   }
+
+  public get(): Observable<Product[]> {
+    return this.http.get<Product[]>('http://localhost:3000/products')
+  }
 }

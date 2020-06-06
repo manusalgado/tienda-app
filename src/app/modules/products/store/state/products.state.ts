@@ -1,3 +1,3 @@
 export type ProductState = Readonly<{
-  products: any[];
+  products: ProductState;
 }>
