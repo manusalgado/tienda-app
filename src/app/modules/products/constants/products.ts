@@ -1,0 +1,1 @@
+export const  SIZES = ['Seleccione una talla', 'S', 'M', 'L', 'X', 'XL'];
