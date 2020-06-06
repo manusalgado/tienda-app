@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProductFacade } from '../../products.facade';
+import { Product } from '../../entities/products';
 
 @Component({
   selector: 'app-products-table',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsTableComponent implements OnInit {
 
-  constructor() { }
+  @Input() products: Product[];
+
+  constructor(private facade: ProductFacade) { }
 
   ngOnInit(): void {
+    this.fetchProducts();
+  }
+
+  public fetchProducts(): void {
+    this.facade.fetchProducts()
   }
 
 }

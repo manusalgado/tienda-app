@@ -27,4 +27,17 @@ export class ProductsEffects {
     )
   );
 
+  getProducts$: Observable<Action> = createEffect(() =>
+    this.actions$.pipe(
+      ofType(ProductActions.getProductsAction),
+      mergeMap(() => this.service.get()
+      .pipe(
+        map((data) => {
+          return ProductActions.getProductsSuccessAction({data})
+        }),
+        catchError(() => EMPTY)
+      ))
+    )
+  );
+
 }

@@ -46,7 +46,6 @@ export class ProductComponent implements OnInit {
       this.createProduct(payload);
       this.form.reset();
       this.location.back()
-
     }
   }
 
